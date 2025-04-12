@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 min-h-screen">
+    <div class="p-8">
+        <div class="absolute top-4 right-4">
+            <a href="/api/user/logout" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+                Logout
+            </a>
+        </div>
+        <h1 class="text-3xl font-bold text-center mt-8 mb-4 text-white">Hii you are on the profile page <%=userData.name%></h1>
+        <h5 class="text-lg text-gray-300 text-center mb-8">Now you can create a new Post</h5>
+    </div>
+
+    <div class="flex flex-col justify-center items-center min-h-[50vh]">
+        <form action="/api/post/createPost" class="w-full max-w-2xl" method="post">
+            <textarea 
+                class="resize-none bg-transparent border-2 border-zinc-800 rounded-md text-white p-4 w-full focus:outline-none focus:border-zinc-600" 
+                name="content"
+                placeholder="Write your post here..."
+                rows="5"
+            ></textarea>
+            <button 
+                type="submit" 
+                class="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+                Create Post
+            </button>
+        </form>
+
+        <div class="mt-12 w-full max-w-2xl">
+            <% userData.post.reverse().forEach(post => { %>
+                <div class="bg-zinc-800 rounded-lg p-6 mb-4">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-white font-semibold">@<%=userData.userName%></h3>
+                    </div>
+                    <p class="text-gray-300">
+                        <%= post.content%>
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 mt-4">
+                    <h1 class="text-blue-500 hover:text-blue-400"><%=post.likes.length%></h1>
+                    <a href="/api/post/like/<%=post._id%>" class="text-blue-500 hover:text-blue-400"> <%=post.likes.indexOf(userData._id)===-1?"Like":"unlike"%></a>
+                    <a href="/api/post/edit/<%=post._id%>" class="text-gray-400 hover:text-gray-300">Edit</a>
+                    <a href="/api/post/delete/<%=post._id%>"class="text-gray-400 hover:text-red-500">delete</a>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>

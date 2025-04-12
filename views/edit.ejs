@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 min-h-screen">
+    <div class="flex flex-col items-center justify-center min-h-screen p-8">
+        <div class="w-full max-w-2xl bg-zinc-800 rounded-lg p-8 shadow-lg">
+            <h1 class="text-3xl font-bold text-white mb-8 text-center">Edit Your Post</h1>
+            <form action="/api/post/update/<%=postData._id%>" method="post">
+                <textarea 
+                    class="resize-none bg-transparent border-2 border-zinc-700 rounded-md text-white p-4 w-full focus:outline-none focus:border-zinc-600 mb-6" 
+                    name="newContent"
+                    placeholder="Write your updated post here..."
+                    rows="5"
+                ><%=postData.content%></textarea>
+                <div class="flex justify-end">
+                    <button 
+                        type="submit" 
+                        class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-lg transition duration-200 transform hover:scale-105"
+                    >
+                        Update Post
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

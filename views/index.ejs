@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+</head>
+
+<body>
+    <div style="max-width: 400px; margin: 0 auto; padding: 20px;">
+        <a href="/login">go to login</a>
+        <h2 style="text-align: center; margin-bottom: 20px;">Registration Form</h2>
+        <form action="/api/user/register" method="POST">
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px;">Username</label>
+                <input type="text" name="userName" required style="width: 100%; padding: 8px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px;">Name</label>
+                <input type="text" name="name" required style="width: 100%; padding: 8px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px;">Email</label>
+                <input type="email" name="email" required style="width: 100%; padding: 8px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px;">Password</label>
+                <input type="password" name="password" required style="width: 100%; padding: 8px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px;">Age</label>
+                <input type="number" name="age" required style="width: 100%; padding: 8px;">
+            </div>
+            <button type="submit" style="width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none;">
+                Submit
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>
