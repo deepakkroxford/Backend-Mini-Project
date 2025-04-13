@@ -1,0 +1,79 @@
+# Project Title
+
+## Description
+This project is a simple web application that allows users to register, log in, create posts, edit posts, like posts, and delete posts. It uses Node.js, Express, MongoDB, and EJS for rendering views.
+
+## Features
+- User registration and login
+- JWT-based authentication
+- Create, edit, and delete posts
+- Like and unlike posts
+- User profile page displaying posts
+
+## Technologies Used
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JSON Web Token (JWT)
+- EJS (Embedded JavaScript)
+- Tailwind CSS (for styling)
+
+## Installation
+
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB (local or cloud instance)
+- npm (Node Package Manager)
+
+### Steps to Install
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file in the root directory and add the following environment variables:
+   ```plaintext
+   SECRETE_KEY=your_secret_key
+   MONGODB_URI=your_mongodb_connection_string
+   ```
+
+4. Start the server:
+   ```bash
+   npm start
+   ```
+
+5. Open your browser and navigate to `http://localhost:3000`.
+
+## Usage
+- **Register a new user:** Navigate to the registration page and fill out the form.
+- **Log in:** Use your registered credentials to log in.
+- **Create a post:** After logging in, you can create a new post from your profile page.
+- **Edit a post:** Click on the edit link next to a post to modify its content.
+- **Delete a post:** Click on the delete link next to a post to remove it.
+- **Like a post:** Click on the like button to like a post.
+
+## API Endpoints
+- `POST /api/user/register` - Register a new user
+- `POST /api/user/login` - Log in a user
+- `GET /api/user/logout` - Log out a user
+- `GET /api/user/profile` - Get user profile
+- `POST /api/post/createPost` - Create a new post
+- `POST /api/post/update/:id` - Update an existing post
+- `GET /api/post/like/:id` - Like or unlike a post
+- `GET /api/post/delete/:id` - Delete a post
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+- Thanks to the contributors and the open-source community for their support and resources.
